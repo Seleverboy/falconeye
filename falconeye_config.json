@@ -1,0 +1,137 @@
+{
+  "version": "13.0.0",
+  "cameras": [
+    {
+      "camera_id": "cam_01",
+      "name": "الكاميرا الرئيسية",
+      "source": 0,
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "enabled": true,
+      "location": "غير محدد",
+      "zone_inner": [
+        0.3,
+        0.25,
+        0.7,
+        0.8
+      ],
+      "zone_outer": [
+        0.2,
+        0.15,
+        0.8,
+        0.9
+      ]
+    }
+  ],
+  "detection": {
+    "world_model": "yolov8n-world.pt",
+    "pose_model": "yolov8n-pose.pt",
+    "face_model": "yolov8n-face.pt",
+    "detect_imgsz": 960,
+    "detect_imgsz_min": 640,
+    "detect_skip": 1,
+    "pose_skip": 2,
+    "conf_detect": 0.28,
+    "conf_person": 0.35,
+    "conf_weapon": 0.15,
+    "conf_face": 0.6,
+    "enable_face_recognition": false,
+    "enable_pose": true
+  },
+  "tracker": {
+    "min_hits_confirm": 5,
+    "max_coast_frames": 3,
+    "reid_threshold": 0.8,
+    "reid_max_dist": 150,
+    "reid_max_age": 5.0,
+    "dup_iou_threshold": 0.45,
+    "merge_iou_threshold": 0.6,
+    "min_track_age": 2.5,
+    "assoc_max_cost": 0.55,
+    "min_match_iou": 0.2,
+    "max_track_speed": 180.0,
+    "max_jump_frac": 0.2
+  },
+  "alarms": {
+    "warn_dwell": 2.5,
+    "alarm_dwell": 4.0,
+    "loiter_radius": 60.0,
+    "loiter_secs": 6.0,
+    "run_speed": 260.0,
+    "crouch_ratio": 1.2,
+    "photo_events_to_alarm": 3,
+    "alarm_hold_secs": 5.0,
+    "score_warn": 35.0,
+    "score_alarm": 70.0,
+    "snapshot_cooldown": 15.0
+  },
+  "evidence": {
+    "evidence_dir": "threats",
+    "daily_subdir": true,
+    "by_threat": true,
+    "save_full_frame": true,
+    "encrypt": false,
+    "encryption_key_path": ".falconeye_enc.key",
+    "hmac_key_path": ".falconeye_hmac.key",
+    "verify_chain_on_start": true,
+    "manifest_name": "tamper_proof_manifest.sha256",
+    "compression_quality": 92,
+    "backup_enabled": true,
+    "backup_interval_hours": 24,
+    "backup_dir": "backups"
+  },
+  "notifications": {
+    "email_enabled": false,
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_user": "",
+    "smtp_password": "",
+    "email_recipients": [],
+    "webhook_enabled": false,
+    "webhook_url": "",
+    "telegram_enabled": false,
+    "telegram_bot_token": "",
+    "telegram_chat_id": "",
+    "notify_on_levels": [
+      2,
+      3
+    ]
+  },
+  "api": {
+    "enabled": true,
+    "host": "127.0.0.1",
+    "port": 8765,
+    "api_key_required": false,
+    "api_keys": [],
+    "cors_enabled": true
+  },
+  "database": {
+    "db_path": "falconeye.db",
+    "auto_vacuum": true,
+    "retention_days": 90
+  },
+  "ui": {
+    "ui_language": "ar",
+    "arabic_font_path": "arial.ttf",
+    "arabic_font_size": 22,
+    "arabic_numerals": false,
+    "dark_mode": true,
+    "show_hud": true,
+    "show_heatmap": false,
+    "show_zones": true,
+    "hud_bar_height": 34,
+    "hud_safe_top": 40,
+    "twin_size": 400,
+    "twin_blink_hz": 4.0
+  },
+  "log_level": "INFO",
+  "log_file": "falconeye_events.log",
+  "log_max_bytes": 10485760,
+  "log_backup_count": 5,
+  "tts_enabled": true,
+  "tts_language": "ar",
+  "tts_rate": 175,
+  "tts_volume": 1.0,
+  "tts_cooldown": 5.0
+}
